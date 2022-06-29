@@ -32,6 +32,7 @@ def star():
         turtle.pencolor("blue")
         turtle.forward(100)
         turtle.right(144)
+        turtle.isvisible()
 
 
 def square():
@@ -42,19 +43,28 @@ def square():
 
 
 def hexagon():
-    for hex in range(0, 6):
+    for h in range(0, 6):
         turtle.pencolor("blue")
         turtle.forward(100)
         turtle.right(60)
 
 
 selection = input("1. Star\n2. Square\n3. Hexagon\nSelect a number: ")
-if selection == "1":
-    print("Excellent choice! Go to the result tab to see your creation.")
-    star()
-elif selection == "2":
-    print("Excellent choice! Go to the result tab to see your creation.")
-    square()
-elif selection == "3":
-    print("Excellent choice! Go to the result tab to see your creation.")
-    hexagon()
+
+try:
+    int(selection)
+
+    if selection == "1":
+        print("Excellent choice! Go to the result tab to see your creation.")
+        star()
+    elif selection == "2":
+        print("Excellent choice! Go to the result tab to see your creation.")
+        square()
+    elif selection == "3":
+        print("Excellent choice! Go to the result tab to see your creation.")
+        hexagon()
+    else:
+        print("must choose 1 - 3")
+
+except:
+    print("you must choose a number")
